@@ -19,6 +19,7 @@ It provides:
 - In-game custom route creation with continent and difficulty selection.
 - GPS waypoint capture for custom routes with label and instruction notes.
 - Right-click deletion for custom route waypoints, with confirmation.
+- Right-click deletion for custom routes, with confirmation.
 - Route-level Items and Spells needed list with icons and tooltips.
 - Item/Spell add dialog has an explicit Item ID or Spell ID mode.
 - Saved custom routes captured in-game with slash commands.

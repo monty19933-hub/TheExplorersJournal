@@ -505,6 +505,19 @@ StaticPopupDialogs["TEJ_DELETE_WAYPOINT"] = {
     preferredIndex = 3,
 }
 
+StaticPopupDialogs["TEJ_DELETE_ROUTE"] = {
+    text = "Delete route %s?",
+    button1 = "Delete",
+    button2 = "Cancel",
+    OnAccept = function(_, data)
+        TEJ:DeleteRoute(data.routeID)
+    end,
+    timeout = 0,
+    whileDead = true,
+    hideOnEscape = true,
+    preferredIndex = 3,
+}
+
 function TEJ:GetAllRoutes()
     local routes = {}
 
@@ -1413,6 +1426,7 @@ function TEJ:EnsureRouteButton(index)
     button:SetNormalFontObject("GameFontNormalSmall")
     button:SetHighlightTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight", "ADD")
     button:EnableMouse(true)
+    button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 
     local text = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     text:SetPoint("LEFT", 8, 0)
@@ -1451,7 +1465,11 @@ function TEJ:RefreshRouteList()
 
         continentHeader:SetPoint("TOPLEFT", 0, -((rowIndex - 1) * 28))
         self:SetRouteButtonText(continentHeader, (continentExpanded and "- " or "+ ") .. continent.label, { r = 1, g = 0.86, b = 0.48 }, true)
-        continentHeader:SetScript("OnClick", function()
+        continentHeader:SetScript("OnClick", function(_, mouseButton)
+            if mouseButton == "RightButton" then
+                return
+            end
+
             TEJ.db.expandedContinents[continent.id] = not TEJ.db.expandedContinents[continent.id]
             TEJ:RefreshRouteList()
         end)
@@ -1467,7 +1485,11 @@ function TEJ:RefreshRouteList()
 
                 header:SetPoint("TOPLEFT", 10, -((rowIndex - 1) * 28))
                 self:SetRouteButtonText(header, (expanded and "- " or "+ ") .. difficulty.label, { r = 1, g = 0.82, b = 0.34 }, false)
-                header:SetScript("OnClick", function()
+                header:SetScript("OnClick", function(_, mouseButton)
+                    if mouseButton == "RightButton" then
+                        return
+                    end
+
                     TEJ.db.expandedDifficulties[continent.id][difficulty.id] = not TEJ.db.expandedDifficulties[continent.id][difficulty.id]
                     TEJ:RefreshRouteList()
                 end)
@@ -1490,11 +1512,26 @@ function TEJ:RefreshRouteList()
                             local button = self:EnsureRouteButton(rowIndex)
                             button:SetPoint("TOPLEFT", 22, -((rowIndex - 1) * 28))
                             self:SetRouteButtonText(button, route.name, route.id == self.db.activeRouteID and { r = 0.45, g = 0.85, b = 1 } or { r = 0.95, g = 0.82, b = 0.5 }, false)
-                            button:SetScript("OnClick", function()
+                            button:SetScript("OnClick", function(_, mouseButton)
+                                if mouseButton == "RightButton" then
+                                    TEJ:ConfirmDeleteRoute(route)
+                                    return
+                                end
+
                                 TEJ:SetActiveRoute(route.id)
                             end)
-                            button:SetScript("OnEnter", nil)
-                            button:SetScript("OnLeave", nil)
+                            button:SetScript("OnEnter", function(self)
+                                if TEJ:IsCustomRoute(route) then
+                                    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+                                    GameTooltip:SetText(route.name, 1, 0.82, 0.34)
+                                    GameTooltip:AddLine("Left-click to load this route.", 1, 1, 1, true)
+                                    GameTooltip:AddLine("Right-click to delete this route.", 0.9, 0.35, 0.28, true)
+                                    GameTooltip:Show()
+                                end
+                            end)
+                            button:SetScript("OnLeave", function()
+                                GameTooltip:Hide()
+                            end)
                             button:Show()
                             hasRoutes = true
                             rowIndex = rowIndex + 1
@@ -1579,6 +1616,48 @@ function TEJ:DeleteWaypoint(routeID, waypointIndex)
     table.remove(route.waypoints, waypointIndex)
     self:SetActiveRoute(route.id)
     Print("Deleted waypoint: " .. label)
+end
+
+function TEJ:ConfirmDeleteRoute(route)
+    if not route then
+        return
+    end
+
+    if not self:IsCustomRoute(route) then
+        Print("Built-in routes cannot be deleted.")
+        return
+    end
+
+    StaticPopup_Show("TEJ_DELETE_ROUTE", route.name or "this route", nil, {
+        routeID = route.id,
+    })
+end
+
+function TEJ:DeleteRoute(routeID)
+    if not routeID then
+        return
+    end
+
+    self.db.customRoutes = self.db.customRoutes or {}
+    for index, route in ipairs(self.db.customRoutes) do
+        if route.id == routeID then
+            local name = route.name or "Route"
+            table.remove(self.db.customRoutes, index)
+
+            if self.db.routeItems then
+                self.db.routeItems[routeID] = nil
+            end
+
+            if self.db.activeRouteID == routeID then
+                self:SetActiveRoute(nil)
+            else
+                self:Refresh()
+            end
+
+            Print("Deleted route: " .. name)
+            return
+        end
+    end
 end
 
 function TEJ:RefreshItems()
