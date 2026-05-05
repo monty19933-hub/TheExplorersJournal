@@ -1,0 +1,9 @@
+## Interface: 11507
+## Title: The Explorer's Journal
+## Notes: Route overlays and journal notes for exploration paths.
+## Author: Monty + Codex
+## Version: 0.8.4
+## SavedVariables: TheExplorersJournalDB
+
+Data.lua
+Core.lua

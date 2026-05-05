@@ -1,0 +1,13 @@
+*.zip
+*.bak
+*.tmp
+
+# WoW client generated files
+WTF/
+Cache/
+Logs/
+
+# OS/editor noise
+Thumbs.db
+.DS_Store
+.vscode/
