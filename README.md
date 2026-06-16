@@ -24,6 +24,7 @@ It provides:
 - Item/Spell add dialog has an explicit Item ID or Spell ID mode.
 - Saved custom routes captured in-game with slash commands.
 - A simple `Data.lua` file where you can add permanent route definitions.
+- Built-in routes can be adapted from credited video or written guides, then refined with GPS waypoints in-game.
 
 ## Install
 
