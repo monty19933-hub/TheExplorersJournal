@@ -584,6 +584,24 @@ function TEJ:GetRouteItems(route)
 
     self.db.routeItems = self.db.routeItems or {}
     self.db.routeItems[route.id] = self.db.routeItems[route.id] or {}
+
+    if route.neededItems then
+        self.db.routeItemsSeeded = self.db.routeItemsSeeded or {}
+        if not self.db.routeItemsSeeded[route.id] then
+            for _, item in ipairs(route.neededItems) do
+                table.insert(self.db.routeItems[route.id], {
+                    type = item.type,
+                    id = item.id,
+                    name = item.name,
+                    link = item.link,
+                    quality = item.quality,
+                    icon = item.icon,
+                })
+            end
+            self.db.routeItemsSeeded[route.id] = true
+        end
+    end
+
     return self.db.routeItems[route.id]
 end
 
