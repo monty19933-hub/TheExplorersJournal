@@ -2,7 +2,7 @@
 ## Title: The Explorer's Journal
 ## Notes: Route overlays and journal notes for exploration paths.
 ## Author: Monty + Codex
-## Version: 0.9.33
+## Version: 0.9.34
 ## SavedVariables: TheExplorersJournalDB
 
 Data.lua
