@@ -1469,7 +1469,7 @@ TEJ.Routes = {
         continent = "eastern-kingdoms",
         difficulty = "advanced",
         mapID = 1423,
-        description = "Plaguewood mountain-edge and death/rez route into the unfinished terrain behind Stratholme's main gate and portal backsides. Primary source: Tim's Variety Gaming, Wow Classic Exploration Part 3 - Behind Stratholme, https://www.youtube.com/watch?v=FbZCwmh8UX8. The source description says the footage was captured on a live WoW Classic server and shows how to get into the area behind Stratholme. Waypoints use readable source GPS overlays where visible; the final far-north anchors approach the edge of the normal Eastern Plaguelands map, where the GPS overlay can briefly stop reporting.",
+        description = "Plaguewood mountain-edge and death/rez route into the unfinished terrain behind Stratholme's main gate and portal backsides. Primary source: Tim's Variety Gaming, Wow Classic Exploration Part 3 - Behind Stratholme, https://www.youtube.com/watch?v=FbZCwmh8UX8. The source description says the footage was captured on a live WoW Classic server and shows how to get into the area behind Stratholme. Readable source anchors include the start map at 16.85,25.12, the Plaguewood wall climb at 16.67,24.73 and 17.03,19.45, the behind-Stratholme map at 15.10,13.70, the outer ridge at 23.92,8.83 and 24.78,7.53, the wall-side traverse at 32.81,11.23, and the last readable coordinate around 42.89,5.62.",
         waypoints = {
             {
                 mapID = 1423,
@@ -1585,10 +1585,10 @@ TEJ.Routes = {
             },
             {
                 mapID = 1423,
-                x = 0.3141,
-                y = 0.1132,
-                label = "Portal backside line",
-                note = "Continue east near 31.41,11.32. From this line you are moving toward the back side of the Stratholme gate and portal terrain.",
+                x = 0.3281,
+                y = 0.1123,
+                label = "Wall-side traverse",
+                note = "Continue east near 32.81,11.23, keeping the high wall on your right. From this line you are moving toward the back side of the Stratholme gate and portal terrain.",
             },
             {
                 mapID = 1423,
@@ -1613,10 +1613,10 @@ TEJ.Routes = {
             },
             {
                 mapID = 1423,
-                x = 0.4294,
-                y = 0.0534,
+                x = 0.4289,
+                y = 0.0562,
                 label = "Behind Stratholme endpoint",
-                note = "End around 42.94,5.34 near the high unfinished ridge behind Stratholme. Hearthstone or a planned death is the cleanest way out after exploring.",
+                note = "End around the last clearly readable source coordinate, 42.89,5.62, near the high unfinished ridge behind Stratholme. The normal coordinate display becomes unreliable shortly after this point; hearthstone or a planned death is the cleanest way out after exploring.",
             },
         },
     },
