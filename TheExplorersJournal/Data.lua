@@ -4246,7 +4246,7 @@ TEJ.Routes = {
         continent = "kalimdor",
         difficulty = "easy",
         mapID = 1446,
-        description = "Short coastline swim from Land's End Beach to the offshore South Seas pirate camp south of Tanaris. Primary source: Tim's Variety Gaming, Wow Classic Exploration Part 19 - Curious Coastlines, https://www.youtube.com/watch?v=XW2nZlcJqU4. The source shows a Tanaris map at Land's End Beach 60.84,86.86, then rides/swims from the southern beach around 61.39,85.17 out through the South Seas fatigue edge near 58.96,97.37 and 59.01,97.70 toward the small offshore island around 59.09,98.02. Later frames show Southsea Freebooters, huts, palms, and a wooden platform/boat structure around 59.12,99.15. This is a scenic coastline curiosity rather than a deep out-of-bounds route, but fatigue appears quickly once you leave the safe beach water.",
+        description = "Short coastline swim from Land's End Beach to the offshore South Seas pirate camp south of Tanaris, then into the hidden Veiled Sea cave below the camp. Primary source: Tim's Variety Gaming, Wow Classic Exploration Part 19 - Curious Coastlines, https://www.youtube.com/watch?v=XW2nZlcJqU4. The source shows a Tanaris map at Land's End Beach 60.84,86.86, then rides/swims from the southern beach around 61.39,85.17 out through the South Seas fatigue edge near 58.96,97.37 and 59.01,97.70 toward the small offshore island around 59.09,98.02. Later frames show Southsea Freebooters, huts, palms, and a wooden platform/boat structure around 59.12,99.15, then switch to The Veiled Sea hidden-zone readouts around 39.61,95.91, 40.41,95.80, 40.56,95.53, and 40.60,95.22 inside the cave. The final cave markers are plotted at the Tanaris map edge as practical overlay anchors because the hidden-zone coordinate space is not the normal Tanaris map.",
         neededItems = {
             {
                 type = "item",
@@ -4261,6 +4261,13 @@ TEJ.Routes = {
                 name = "Aquatic Form",
                 link = "spell:1066",
                 icon = "Interface\\Icons\\Ability_Druid_AquaticForm",
+            },
+            {
+                type = "item",
+                id = 5996,
+                name = "Elixir of Water Breathing",
+                link = "item:5996",
+                icon = "Interface\\Icons\\INV_Potion_12",
             },
         },
         waypoints = {
@@ -4318,7 +4325,21 @@ TEJ.Routes = {
                 x = 0.5912,
                 y = 0.9915,
                 label = "Wooden structure",
-                note = "Optional endpoint near 59.12,99.15 at the wooden platform/boat structure. Do not linger if fatigue remains active; use hearth or return to shore promptly.",
+                note = "Reach the wooden platform/boat structure near 59.12,99.15. From here Tim's Part 19 footage continues into the camp's hidden cave area rather than ending at the shore.",
+            },
+            {
+                mapID = 1446,
+                x = 0.5918,
+                y = 0.9940,
+                label = "Veiled Sea cave entry",
+                note = "Use this as a practical Tanaris map-edge anchor for the cave entry. The source coordinate display switches to The Veiled Sea shortly after the pirate camp, with readable hidden-zone positions around 39.61,95.91 and 40.41,95.80.",
+            },
+            {
+                mapID = 1446,
+                x = 0.5924,
+                y = 0.9965,
+                label = "Veiled Sea back cave",
+                note = "Optional final exploration leg. Tim's footage follows the dark cave floor past bones and rocks to hidden-zone readouts around 40.56,95.53 and 40.60,95.22. These are hidden-zone coordinates, so this marker stays near the Tanaris map edge for overlay continuity. Hearth, swim back, or use a planned death to exit.",
             },
         },
     },
