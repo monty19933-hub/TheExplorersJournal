@@ -8,14 +8,14 @@ TEJ.Routes = {
         continent = "eastern-kingdoms",
         difficulty = "easy",
         mapID = 1432,
-        description = "A cross-zone mountain route from Loch Modan into Dun Morogh toward the Ironforge Airport and farms.",
+        description = "Player-GPS route from Loch Modan into Dun Morogh toward the Ironforge Airport and farms. The coordinates come from the original in-game screenshot/manual route capture. Community corroboration: Ironforge Airfield access notes, https://wowwiki-archive.fandom.com/wiki/Ironforge_Airfield, describe going to Loch Modan/North Gate Pass, moving behind the tree to the right of the gate, and climbing the hill gap; a Classic player report, https://www.reddit.com/r/wow/comments/urzx6z/finally_managed_to_make_it_to_ironforge_airfield/, describes the same tree to the right of the Loch Modan tunnel toward North Gate Outpost.",
         waypoints = {
             {
                 mapID = 1432,
                 x = 0.1957,
                 y = 0.1521,
-                label = "Starting mountain latch",
-                note = "Continue jumping at the mountain until you latch on, and are able to jump once more up the mountain. This step can be tricky and take awhile.",
+                label = "North Gate tree latch",
+                note = "Start beside the North Gate Pass approach on the Loch Modan side. Use the tree/gap to the right of the tunnel/gate area, then continue jumping at the mountain until you latch on and can jump once more up the mountain. This step can be tricky and take awhile.",
             },
             {
                 mapID = 1432,
@@ -113,7 +113,7 @@ TEJ.Routes = {
                 x = 0.7215,
                 y = 0.1789,
                 label = "Ironforge Airport / Farms",
-                note = "Congratulations! You should now see buildings and are free to explore the airport as you please!",
+                note = "Congratulations! You should now see the Ironforge Airfield buildings and are free to explore the airport as you please. From here, use the separate Airfield to Wetlands Farm route if you want to continue toward the hidden farms and Tunnel to Nothing.",
             },
         },
     },
