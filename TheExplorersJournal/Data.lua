@@ -3194,14 +3194,14 @@ TEJ.Routes = {
         continent = "eastern-kingdoms",
         difficulty = "easy",
         mapID = 1434,
-        description = "Terrain-walk route to get behind the Zul'Gurub portal in northeastern Stranglethorn Vale. Primary source: Royal T, Behind Zul'Gurub Portal Any Class! Exploration [WoW Classic], https://www.youtube.com/watch?v=9_2Vy9nVv-c. The source video shows an any-class route with no blink, fear, logout skip, or special item. The video does not show coordinate overlays; waypoint coordinates are practical map anchors around the standard Zul'Gurub entrance area, supported by public location references placing Zul'Gurub in northeastern Stranglethorn Vale around 53,17.",
+        description = "Terrain-walk route to get behind the Zul'Gurub portal in northeastern Stranglethorn Vale. Primary source: Royal T, Behind Zul'Gurub Portal Any Class! Exploration [WoW Classic], https://www.youtube.com/watch?v=9_2Vy9nVv-c. The source video shows an any-class route with no blink, fear, logout skip, or special item. Supporting context: Blizzard's WoW Classic Zul'Gurub release article places the entrance east of Lake Nazferiti in Stranglethorn Vale, and a Classic community thread documents the same side-entry/behind-portal use case plus mage Blink, Duskwood back-door, and watchtower alternatives: https://www.reddit.com/r/classicwow/comments/gqsb0b/zulgurub_side_entrance_skipbehind_portal/. The video does not show coordinate overlays; waypoint coordinates are practical map anchors around the standard Zul'Gurub entrance area near 53,17. This route is for the portal backside/side-entry spot only, not the deeper uninstanced Zul'Gurub terrain tour.",
         waypoints = {
             {
                 mapID = 1434,
                 x = 0.5300,
                 y = 0.1700,
                 label = "ZG approach road",
-                note = "Start on the road leading up to the Zul'Gurub entrance in northeastern Stranglethorn Vale, near 53,17. Face the portal stairs and the two cobra-head pillars.",
+                note = "Start on the road leading up to the Zul'Gurub entrance in northeastern Stranglethorn Vale, near 53,17 and east of Lake Nazferiti. Face the portal stairs and the two cobra-head pillars.",
             },
             {
                 mapID = 1434,
@@ -3243,14 +3243,14 @@ TEJ.Routes = {
                 x = 0.5140,
                 y = 0.1600,
                 label = "Behind the structure",
-                note = "You are now behind the front portal structure. Keep moving along the back side of the wall until the rear stairs and green portal glow come into view.",
+                note = "You are now behind the front portal structure. Keep moving along the back side of the wall until the rear stairs and green portal glow come into view. This is the behind-portal skip area, not the larger uninstanced ZG route.",
             },
             {
                 mapID = 1434,
                 x = 0.5120,
                 y = 0.1580,
                 label = "Behind ZG portal",
-                note = "Arrive behind the Zul'Gurub portal. This is the safe gathering/summoning spot shown at the end of the source route.",
+                note = "Arrive behind the Zul'Gurub portal. This is the gathering/summoning spot shown at the end of the source route. Community notes mention alternatives such as mage Blink, Duskwood back-door access, or a watchtower route, but this overlay keeps to Royal T's any-class terrain walk.",
             },
         },
     },
